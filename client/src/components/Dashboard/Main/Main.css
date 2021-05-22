@@ -1,0 +1,24 @@
+/* Sidenav scrollbar */
+.main::-webkit-scrollbar {
+    width: 9px !important;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+.main::-webkit-scrollbar-track {
+    background: hsla(0, 0%, 100%, 0.2);
+}
+
+.main {
+    background-color: #ddd;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main h1 {
+    color: black;
+}

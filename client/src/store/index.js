@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
-import { alertReducer, userLoginReducer, userRegisterReducer } from './reducers'
+import { alertReducer, userLoginReducer, userRegisterReducer } from './reducer'
 
 const reducers = combineReducers({
     alerts: alertReducer,

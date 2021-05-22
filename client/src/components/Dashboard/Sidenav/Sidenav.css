@@ -1,0 +1,112 @@
+/* Sidenav scrollbar */
+.sidenav::-webkit-scrollbar {
+    width: 7px !important;
+}
+
+.sidenav::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+.sidenav::-webkit-scrollbar-track {
+    background: hsla(0, 0%, 100%, 0.2);
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    background-color: #242939;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidenav h3 {
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    margin: 20px 20px;
+    margin-top: 30px;
+}
+
+.sidenav__logoWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 60px;
+}
+
+.sidenav__toggleButton {
+    background-color: transparent;
+    border: none;
+}
+
+.sidenav__menuItem {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+.sidenav__menuItem:hover {
+    background-color: #191f31;
+}
+
+.sidenav__menuItem h2 {
+    font-size: 0.9rem;
+    margin-left: 12px;
+    margin-bottom: 0 !important;
+    cursor: pointer;
+}
+
+.sidenav__menuItem .icon {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+.sidenav__menuItem .iconRight {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+.sidenav__menuItem button {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+}
+
+.sidenav__subMenu {
+    flex-basis: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 1s ease;
+}
+
+.sidenav__subMenu.open {
+    max-height: 1000px;
+    overflow: visible;
+    transition: all 1s ease;
+}
+
+.sidenav__subMenuItem {
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+    background-color: #242939;
+    cursor: pointer;
+}
+
+.sidenav__subMenuItem:hover {
+    background-color: #191f31;
+}
+
+.sidenav__subMenuItem .text {
+    font-size: 0.9rem;
+    font-weight: 600 !important;
+    margin-left: 5px;
+    color: #aaa;
+}

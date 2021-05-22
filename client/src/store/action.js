@@ -25,13 +25,13 @@ export const alertAdd =
     }
 
 // to register a new user
-export const adminRegister = (userData) => async (dispatch) => {
+export const userRegister = (userData) => async (dispatch) => {
     try {
         dispatch({
             type: actionTypes.USER_REGISTER_REQUEST,
         })
 
-        const { data } = await axiosInstance.post('/api/user', userData)
+        await axiosInstance.post('/api/user', userData)
 
         dispatch({
             type: actionTypes.USER_REGISTER_SUCCESS,
