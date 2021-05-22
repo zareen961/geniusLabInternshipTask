@@ -4,7 +4,7 @@
 }
 
 .main::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(50, 134, 230, 0.822);
     border-radius: 5px;
 }
 
@@ -13,12 +13,229 @@
 }
 
 .main {
-    background-color: #ddd;
+    background-color: #eee;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px;
+    gap: 20px;
+    grid-template-rows: 300px 300px 600px;
 }
 
-.main h1 {
-    color: black;
+/* Card styling ************************************/
+.card {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #ddd;
+}
+
+.card > h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: rgba(0, 0, 0, 0.671);
+    text-transform: capitalize;
+}
+
+.card.sales {
+    grid-column: 2/4;
+}
+
+.firstCardWrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.firstCardWrapper .figureWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.firstCardWrapper .chartWrapper {
+    flex: 1;
+}
+
+.firstCardWrapper .figureWrapper h1 {
+    font-size: 2rem;
+    color: #888;
+}
+
+.firstCardWrapper .figureWrapper span {
+    font-weight: 700;
+    color: rgba(136, 136, 136, 0.623);
+    font-size: 1.1rem;
+}
+
+/* Charts ******************************************* */
+.main__middleWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main__middleWrapper h3 {
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.main__middleWrapper p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.main__middleWrapper .utils {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__middleWrapper .utils span {
+    background-color: #81bcff6b;
+    color: #3e97ff;
+    padding: 5px 10px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.main__middleWrapper .utils h4,
+.main__middleWrapper .progressValue {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.main__middleWrapper .utils p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.main__middleWrapper .utils button {
+    /* margin-right: auto; */
+    background-color: transparent;
+    border: 1px solid #aaa;
+    color: #555;
+    padding: 5px 10px;
+    font-weight: 500;
+}
+
+.main__middleWrapper .progress {
+    margin-top: 5px;
+    height: 5px;
+}
+
+.main__middleWrapper .time {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3e97ff;
+}
+
+/* Top Products Card styling ********************************************* */
+.main .itemsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.main .itemsWrapper .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3e97ff;
+    padding: 15px;
+    border-radius: 3px;
+    flex: 0.25;
+}
+
+.main .itemsWrapper .item .text {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.main .contentWrapper {
+    margin-top: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main .contentWrapper .contentItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .contentWrapper .contentItem .leftWrapper {
+    flex: 0.6;
+}
+
+.main .contentWrapper .contentItem .leftWrapper h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: rgba(51, 51, 51, 0.849);
+}
+
+.main .contentWrapper .contentItem .leftWrapper p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.main .contentWrapper .contentItem .rightWrapper {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+}
+
+.main .contentWrapper .contentItem .rightWrapper .percentage {
+    margin-right: 10px;
+    font-weight: 600;
+    color: rgba(136, 136, 136, 0.801);
+    font-size: 1.05rem;
+    flex: 0.4;
+}
+
+.main .contentWrapper .contentItem .rightWrapper .bar {
+    flex: 0.6;
+}
+
+.main .contentWrapper .contentItem .rightWrapper .bar .progress {
+    height: 5px;
+}
+
+.main .contentWrapper .contentItem .rightWrapper .bar.one .progress .progress-bar {
+    background-color: crimson;
+}
+
+.main .contentWrapper .contentItem .rightWrapper .bar.two .progress .progress-bar {
+    background-color: violet;
+}
+
+.main .contentWrapper .contentItem .rightWrapper .bar.three .progress .progress-bar {
+    background-color: gold;
+}
+.main .contentWrapper .contentItem .rightWrapper .bar.four .progress .progress-bar {
+    background-color: indigo;
+}
+.main .contentWrapper .contentItem .rightWrapper .bar.five .progress .progress-bar {
+    background-color: green;
+}
+
+.card.sales,
+.card.top {
+    margin-bottom: 50px;
 }
