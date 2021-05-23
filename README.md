@@ -6,6 +6,7 @@ This is clone of keen dashboard made for an internship task for genius lab.
 - ReactJS
 - Redux
 - Bootstrap
+- Apex Charts
 
 ## Database
 - MongoDB Atlas
