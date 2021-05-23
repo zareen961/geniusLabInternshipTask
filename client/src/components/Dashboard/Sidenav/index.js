@@ -1,6 +1,7 @@
 import React from 'react'
 import { CgMenuLeft, CgMenuRight } from 'react-icons/cg'
 import { BsThreeDots } from 'react-icons/bs'
+import { GrFormClose } from 'react-icons/gr'
 import { IconContext } from 'react-icons'
 
 import { MENU } from '../../../constants/MENU'
@@ -8,17 +9,28 @@ import logo from '../../../assets/images/logo-1.svg'
 import MenuItem from './MenuItem'
 import './Sidenav.css'
 
-const Sidenav = ({ isOpen, setIsOpen }) => {
+const Sidenav = ({ isOpen, setIsOpen, isSidenavOpen, setIsSidenavOpen }) => {
+    const handleSidenavClick = () => {
+        if (isSidenavOpen) {
+            setIsSidenavOpen(false)
+        } else {
+            setIsOpen((prevIsOpen) => !prevIsOpen)
+        }
+    }
+
     return (
-        <div className="sidenav">
+        <div className={isSidenavOpen ? 'sidenav' : 'sidenav closeSidebar'}>
             <div className="sidenav__logoWrapper">
                 {isOpen && <img src={logo} alt="logo" />}
-                <button
-                    onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-                    className="sidenav__toggleButton"
-                >
+                <button onClick={handleSidenavClick} className="sidenav__toggleButton">
                     <IconContext.Provider value={{ size: '1.75rem', color: '#ddd' }}>
-                        {isOpen ? <CgMenuLeft /> : <CgMenuRight />}
+                        {isSidenavOpen ? (
+                            <GrFormClose />
+                        ) : isOpen ? (
+                            <CgMenuLeft />
+                        ) : (
+                            <CgMenuRight />
+                        )}
                     </IconContext.Provider>
                 </button>
             </div>

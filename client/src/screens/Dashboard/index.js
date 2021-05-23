@@ -7,14 +7,29 @@ import './Dashboard.css'
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(true)
+    const [isSidenavOpen, setIsSidenavOpen] = useState(false)
 
     return (
-        <div className={isOpen ? 'dashboard' : 'dashboard collapsed'}>
-            <div className="dashboard__sidenav">
-                <Sidenav isOpen={isOpen} setIsOpen={setIsOpen} />
+        <div className={isOpen && !isSidenavOpen ? 'dashboard' : 'dashboard collapsed'}>
+            <div
+                className={
+                    isSidenavOpen
+                        ? 'dashboard__sidenav'
+                        : 'dashboard__sidenav closeSidenav'
+                }
+            >
+                <Sidenav
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                    isSidenavOpen={isSidenavOpen}
+                    setIsSidenavOpen={setIsSidenavOpen}
+                />
             </div>
             <div className="dashboard__header">
-                <Header />
+                <Header
+                    isSidenavOpen={isSidenavOpen}
+                    setIsSidenavOpen={setIsSidenavOpen}
+                />
             </div>
             <div className="dashboard__main">
                 <Main />

@@ -18,6 +18,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     display: grid;
+
     grid-template-columns: 1fr 1fr 1fr;
     padding: 30px;
     gap: 20px;
@@ -42,7 +43,7 @@
 }
 
 .card.sales {
-    grid-column: 2/4;
+    grid-column: 2/-1;
 }
 
 .firstCardWrapper {
@@ -238,4 +239,22 @@
 .card.sales,
 .card.top {
     margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1250px) {
+    .main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 300px 300px 600px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 300px) repeat(2, 600px);
+    }
+
+    .card.sales {
+        grid-column: 1/-1;
+    }
 }

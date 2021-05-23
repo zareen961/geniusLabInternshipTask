@@ -12,7 +12,10 @@ const MenuItem = ({ isOpen, menu }) => {
 
     return (
         <>
-            <div className="sidenav__menuItem">
+            <div
+                className="sidenav__menuItem"
+                onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+            >
                 <IconContext.Provider value={{ className: 'icon' }}>
                     <GetMenuIcon menu={menu} />
                 </IconContext.Provider>
@@ -38,7 +41,7 @@ const MenuItem = ({ isOpen, menu }) => {
                     }
                 >
                     {SUBMENU.map((title) => (
-                        <div className="sidenav__subMenuItem">
+                        <div className="sidenav__subMenuItem" key={title}>
                             <span>
                                 <IconContext.Provider value={{ size: '1.75rem' }}>
                                     <BsDot />

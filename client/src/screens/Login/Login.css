@@ -2,6 +2,10 @@
     margin: 0;
 }
 
+body {
+    background-color: #242939;
+}
+
 .login {
     display: flex;
     flex-direction: column;
@@ -9,6 +13,9 @@
     justify-content: center;
     width: 100vw;
     box-sizing: border-box;
+    background-color: #242939;
+    color: #eee;
+    overflow-x: hidden;
 }
 
 .login > h1 {
@@ -36,7 +43,7 @@
 }
 
 .loginForm {
-    border-right: 1.5px solid #ddd;
+    border-right: 2px solid #00000069;
 }
 
 /* Register form image select *****************************/
@@ -60,4 +67,22 @@
 .registerForm__imageSelect:active {
     background-color: #007bff;
     color: #fff;
+}
+
+@media screen and (max-width: 1090px) {
+    .login__forms {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .login h1 {
+        font-size: 1.5rem;
+    }
+
+    .loginForm,
+    .registerForm {
+        margin: 70px 0;
+        padding: 0 70px;
+    }
 }

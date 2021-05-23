@@ -2,6 +2,8 @@ import React from 'react'
 import { DropdownButton, Dropdown } from 'react-bootstrap'
 import { FiSettings } from 'react-icons/fi'
 import { IoMdNotificationsOutline } from 'react-icons/io'
+import { CgMenuLeft, CgMenuRight } from 'react-icons/cg'
+
 import { FiLogOut } from 'react-icons/fi'
 import { IoSearchOutline } from 'react-icons/io5'
 import { IconContext } from 'react-icons'
@@ -11,7 +13,7 @@ import { userLogout } from '../../../store/action'
 import language from '../../../assets/images/226-united-states.svg'
 import './Header.css'
 
-const Header = () => {
+const Header = ({ setIsSidenavOpen, isSidenavOpen }) => {
     const dispatch = useDispatch()
     const { user } = useSelector((state) => state.userLogin)
     return (
@@ -34,6 +36,13 @@ const Header = () => {
                 </DropdownButton>
             </div>
             <div className="header__rightWrapper">
+                <IconContext.Provider
+                    value={{ className: 'iconHeader sidenavToggle', color: '#3e97ff' }}
+                >
+                    <button onClick={() => setIsSidenavOpen(!isSidenavOpen)}>
+                        {isSidenavOpen ? <CgMenuLeft /> : <CgMenuRight />}
+                    </button>
+                </IconContext.Provider>
                 <IconContext.Provider value={{ className: 'iconHeader' }}>
                     <IoSearchOutline />
                 </IconContext.Provider>

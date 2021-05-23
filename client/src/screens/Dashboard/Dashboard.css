@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: repeat(10, 10vh);
+    background-color: #eee;
 }
 
 .dashboard.collapsed {
@@ -20,6 +21,7 @@
 
 .dashboard.collapsed .dashboard__sidenav {
     width: 5vw;
+    transition: all 0.5s ease-in-out;
 }
 
 .dashboard__header {
@@ -32,4 +34,15 @@
 .dashboard__main {
     grid-column: 2/-1;
     grid-row: 2/-1;
+}
+
+@media screen and (max-width: 865px) {
+    .dashboard {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto;
+    }
+    .dashboard__sidenav {
+        grid-row: none;
+        height: 100vh;
+    }
 }

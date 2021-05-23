@@ -61,3 +61,19 @@
     border: none;
     background-color: transparent;
 }
+
+.header__rightWrapper .iconHeader.sidenavToggle {
+    display: none;
+}
+
+@media screen and (max-width: 865px) {
+    .header__rightWrapper .iconHeader.sidenavToggle {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .header {
+        flex-direction: column;
+    }
+}

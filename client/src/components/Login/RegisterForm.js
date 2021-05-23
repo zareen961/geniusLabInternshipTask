@@ -43,7 +43,7 @@ const RegisterForm = () => {
             <h2>Sign Up!</h2>
             <Form onSubmit={handleOnSubmit} className="registerForm__form">
                 <Row>
-                    <Col>
+                    <Col xl={6} xs={12}>
                         <Form.Group controlId="formBasicName">
                             <Form.Label>First Name</Form.Label>
                             <Form.Control
@@ -56,7 +56,7 @@ const RegisterForm = () => {
                             />
                         </Form.Group>
                     </Col>
-                    <Col>
+                    <Col xl={6} xs={12}>
                         <Form.Group controlId="formBasicName">
                             <Form.Label>Last Name</Form.Label>
                             <Form.Control
@@ -71,7 +71,7 @@ const RegisterForm = () => {
                 </Row>
 
                 <Row>
-                    <Col>
+                    <Col xl={6} xs={12}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
@@ -84,7 +84,7 @@ const RegisterForm = () => {
                             />
                         </Form.Group>
                     </Col>
-                    <Col>
+                    <Col xl={6} xs={12}>
                         <Form.Group controlId="formBasicPhoto">
                             <Form.Label>Choose Profile Photo</Form.Label>
                             <label className="registerForm__imageSelect">
